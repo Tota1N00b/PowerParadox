@@ -4,10 +4,21 @@ body {
   padding: 0;
   background: black;
   position: relative;
+  overflow: hidden;
 }
 
 canvas {
   display: block;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+}
+
+p {
+  font-family: Arial;
+  font-size: 1.4rem;
 }
 
 #logo-container {
@@ -23,6 +34,12 @@ canvas {
   font-size: 3rem;
   color: white;
   position: relative;
+  transition: all 0.5s ease;
+}
+
+.link:hover {
+  opacity: 1;
+  transform: scale(1.02);
 }
 
 .link a {
@@ -79,6 +96,59 @@ canvas {
   transition: transform 0.3s ease;
 }
 
+.slidyboy {
+  position: absolute;
+  top: 15%;
+  right: 0px;
+  padding-top: 0px;
+  padding-left: 25px;
+  padding-right: 25px;
+  transform: translate(75vw, 0px);
+  width: 45%;
+  height: 65%;
+  transition: all 0.75s ease;
+  background-color: rgb(0, 221, 103);
+  opacity: 0;
+  overflow-y: scroll;
+}
+
+.slidyboy.toggled {
+  transform: translate(0vw, 0px);
+  opacity: 1;
+}
+
 .link a:hover~.custom-line {
   transform: rotate(-30deg);
+}
+
+.paradox{
+  font-family: 'Chakra Petch', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  color: white;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.paradox:hover {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 700px) {
+  .slidyboy {
+    width: 75%;
+  }
+
+  .paradox {
+    font-size: 2rem;
+    width: 200px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word; 
+  }
+
+  .link {
+    font-size: 2rem;
+  }
 }
